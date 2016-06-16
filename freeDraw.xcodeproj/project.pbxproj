@@ -13,6 +13,7 @@
 		93F24B721D100BC6003EB3D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F24B711D100BC6003EB3D5 /* Assets.xcassets */; };
 		93F24B751D100BC6003EB3D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F24B731D100BC6003EB3D5 /* LaunchScreen.storyboard */; };
 		93F24B801D100BC6003EB3D5 /* freeDrawUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F24B7F1D100BC6003EB3D5 /* freeDrawUITests.swift */; };
+		93F24B8B1D100C34003EB3D5 /* LinerInterpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F24B8A1D100C34003EB3D5 /* LinerInterpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		93F24B7B1D100BC6003EB3D5 /* freeDrawUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = freeDrawUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F24B7F1D100BC6003EB3D5 /* freeDrawUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = freeDrawUITests.swift; sourceTree = "<group>"; };
 		93F24B811D100BC6003EB3D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93F24B8A1D100C34003EB3D5 /* LinerInterpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinerInterpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				93F24B6A1D100BC6003EB3D5 /* AppDelegate.swift */,
 				93F24B6C1D100BC6003EB3D5 /* ViewController.swift */,
+				93F24B8A1D100C34003EB3D5 /* LinerInterpView.swift */,
 				93F24B6E1D100BC6003EB3D5 /* Main.storyboard */,
 				93F24B711D100BC6003EB3D5 /* Assets.xcassets */,
 				93F24B731D100BC6003EB3D5 /* LaunchScreen.storyboard */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F24B6D1D100BC6003EB3D5 /* ViewController.swift in Sources */,
+				93F24B8B1D100C34003EB3D5 /* LinerInterpView.swift in Sources */,
 				93F24B6B1D100BC6003EB3D5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
