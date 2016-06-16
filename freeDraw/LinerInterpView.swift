@@ -10,7 +10,7 @@ import UIKit
 
 class LinerInterpView: UIView {
 
-    var path : UIBezierPath? = nil;
+    let path : UIBezierPath = UIBezierPath.init();
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -22,26 +22,25 @@ class LinerInterpView: UIView {
         super.init(coder: aDecoder)
         self.multipleTouchEnabled = true
         self.backgroundColor = UIColor.whiteColor()
-        path = UIBezierPath.init()
-        path?.lineWidth = 2;
+        path.lineWidth = 2;
     }
     
     override func drawRect(rect: CGRect) {
         // Drawing code
         UIColor.blackColor().setStroke()
-        path?.stroke()
+        path.stroke()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first!
         let p = touch.locationInView(self)
-        path?.moveToPoint(p)
+        path.moveToPoint(p)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first!
         let p = touch.locationInView(self)
-        path?.addLineToPoint(p)
+        path.addLineToPoint(p)
         self.setNeedsDisplay()
     }
     
