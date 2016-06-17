@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		93A7D3C71D12612C00DF0F8E /* CachedLIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7D3C61D12612C00DF0F8E /* CachedLIView.swift */; };
 		93A7D3C91D129B3D00DF0F8E /* BezierInterpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7D3C81D129B3D00DF0F8E /* BezierInterpView.swift */; };
+		93A7D3CB1D13CC2B00DF0F8E /* SmoothedBIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7D3CA1D13CC2B00DF0F8E /* SmoothedBIView.swift */; };
 		93F24B6B1D100BC6003EB3D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F24B6A1D100BC6003EB3D5 /* AppDelegate.swift */; };
 		93F24B6D1D100BC6003EB3D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F24B6C1D100BC6003EB3D5 /* ViewController.swift */; };
 		93F24B701D100BC6003EB3D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F24B6E1D100BC6003EB3D5 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		93A7D3C61D12612C00DF0F8E /* CachedLIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedLIView.swift; sourceTree = "<group>"; };
 		93A7D3C81D129B3D00DF0F8E /* BezierInterpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierInterpView.swift; sourceTree = "<group>"; };
+		93A7D3CA1D13CC2B00DF0F8E /* SmoothedBIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothedBIView.swift; sourceTree = "<group>"; };
 		93F24B671D100BC6003EB3D5 /* freeDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F24B6A1D100BC6003EB3D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F24B6C1D100BC6003EB3D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				93F24B8A1D100C34003EB3D5 /* LinerInterpView.swift */,
 				93A7D3C61D12612C00DF0F8E /* CachedLIView.swift */,
 				93A7D3C81D129B3D00DF0F8E /* BezierInterpView.swift */,
+				93A7D3CA1D13CC2B00DF0F8E /* SmoothedBIView.swift */,
 				93F24B6E1D100BC6003EB3D5 /* Main.storyboard */,
 				93F24B711D100BC6003EB3D5 /* Assets.xcassets */,
 				93F24B731D100BC6003EB3D5 /* LaunchScreen.storyboard */,
@@ -208,6 +211,7 @@
 			files = (
 				93F24B6D1D100BC6003EB3D5 /* ViewController.swift in Sources */,
 				93A7D3C71D12612C00DF0F8E /* CachedLIView.swift in Sources */,
+				93A7D3CB1D13CC2B00DF0F8E /* SmoothedBIView.swift in Sources */,
 				93F24B8B1D100C34003EB3D5 /* LinerInterpView.swift in Sources */,
 				93A7D3C91D129B3D00DF0F8E /* BezierInterpView.swift in Sources */,
 				93F24B6B1D100BC6003EB3D5 /* AppDelegate.swift in Sources */,
