@@ -21,7 +21,6 @@ class BezierInterpView: UIView {
     let path : UIBezierPath
     var increamentalImage : UIImage?
     var pts : [CGPoint]
-    var ctr : uint = 0
     
     required init?(coder aDecoder: NSCoder) {
         path = UIBezierPath.init()
@@ -39,9 +38,9 @@ class BezierInterpView: UIView {
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        ctr = 0
         if touches.first != nil {
             let touch = touches.first!
+            pts.removeAll()
             pts.append(touch.locationInView(self))
         }
     }
@@ -49,19 +48,23 @@ class BezierInterpView: UIView {
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if touches.first != nil {
             let touch = touches.first!
-            path.addLineToPoint(touch.locationInView(self))
-            self.setNeedsDisplay()
+            pts.append(touch.locationInView(self))
+            if pts.count == 4 {
+                path.moveToPoint(pts[0])
+                path.addCurveToPoint(pts[3], controlPoint1: pts[1], controlPoint2: pts[2])
+                self.setNeedsDisplay()
+                pts.removeAll()
+                pts.append(path.currentPoint)
+            }
         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if touches.first != nil {
-            let touch = touches.first!
-            path.addLineToPoint(touch.locationInView(self))
-            self.drawBitmap()
-            self.setNeedsDisplay()
-            path.removeAllPoints()
-        }
+        self.drawBitmap()
+        self.setNeedsDisplay()
+        pts.removeAll()
+        pts.append(path.currentPoint)
+        path.removeAllPoints()
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {

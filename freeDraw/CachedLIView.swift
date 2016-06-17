@@ -41,6 +41,9 @@ class CachedLIView: UIView {
             let touch = touches.first!
             path.moveToPoint(touch.locationInView(self))
         }
+//        else {
+//            print("touch begin with touches = \(touches)\n");
+//        }
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {

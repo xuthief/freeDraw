@@ -85,8 +85,8 @@
 			children = (
 				93F24B6A1D100BC6003EB3D5 /* AppDelegate.swift */,
 				93F24B6C1D100BC6003EB3D5 /* ViewController.swift */,
-				93A7D3C61D12612C00DF0F8E /* CachedLIView.swift */,
 				93F24B8A1D100C34003EB3D5 /* LinerInterpView.swift */,
+				93A7D3C61D12612C00DF0F8E /* CachedLIView.swift */,
 				93A7D3C81D129B3D00DF0F8E /* BezierInterpView.swift */,
 				93F24B6E1D100BC6003EB3D5 /* Main.storyboard */,
 				93F24B711D100BC6003EB3D5 /* Assets.xcassets */,
