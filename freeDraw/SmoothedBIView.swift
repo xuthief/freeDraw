@@ -20,8 +20,11 @@ class SmoothedBIView: UIView {
     
     let path : UIBezierPath
     var increamentalImage : UIImage?
-    var pts : [CGPoint]
-    
+    var circleImage : UIImage?
+    var pts :  Array<CGPoint>// [CGPoint]
+    var beginPoint : CGPoint?
+    var endPoint : CGPoint?
+
     required init?(coder aDecoder: NSCoder) {
         path = UIBezierPath.init()
         path.lineWidth = 2.0
@@ -33,6 +36,7 @@ class SmoothedBIView: UIView {
     
     override func drawRect(rect: CGRect) {
         increamentalImage?.drawInRect(rect)
+        circleImage?.drawInRect(rect)
         path.stroke()
     }
     
@@ -42,6 +46,7 @@ class SmoothedBIView: UIView {
             let touch = touches.first!
             pts.removeAll()
             pts.append(touch.locationInView(self))
+            beginPoint = touch.locationInView(self)
         }
     }
     
@@ -55,15 +60,25 @@ class SmoothedBIView: UIView {
                 path.moveToPoint(pts[0])
                 path.addCurveToPoint(pts_3, controlPoint1: pts[1], controlPoint2: pts[2])
                 self.setNeedsDisplay()
-                pts = [pts_3, pts_4]
+                pts.removeAll()
+                pts.append(pts_3)
+                pts.append(pts_4)
             }
         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if touches.first != nil {
+            let endTouch = touches.first
+            endPoint = endTouch?.locationInView(self)
+            self.drawCircleBitmap()
+        }
+        
         self.drawBitmap()
+
         self.setNeedsDisplay()
         path.removeAllPoints()
+
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
@@ -83,6 +98,24 @@ class SmoothedBIView: UIView {
         increamentalImage?.drawAtPoint(CGPointZero)
         path.stroke()
         increamentalImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    }
+    
+    func drawCircleBitmap() {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, 0.0)
+        //UIColor.blackColor().setStroke()
+        if circleImage == nil {
+            let rectPath = UIBezierPath.init(rect: self.bounds)
+            UIColor.whiteColor().setFill()
+            rectPath.fill()
+        }
+        //let curCtx = UIGraphicsGetCurrentContext()
+        let roundedRect = CGRectMake(min(beginPoint!.x,endPoint!.x), min(beginPoint!.y,endPoint!.y), 2*abs(endPoint!.x - beginPoint!.x), 2*abs(endPoint!.y - beginPoint!.y))
+        let roundedPath = UIBezierPath.init(ovalInRect: roundedRect)
+//        UIColor.init(red: 0.1, green: 0.5, blue: 0.9, alpha: 0.5).setFill()
+        UIColor.init(white: 0.8, alpha: 0.5).setFill()
+        roundedPath.fillWithBlendMode(CGBlendMode.Normal, alpha: 0.5)
+        circleImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
 }
